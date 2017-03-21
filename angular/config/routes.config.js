@@ -26,7 +26,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
 				},
 				main: {}
 			}
-		})
+	     })
 		.state('app.landing', {
             url: '/',
             views: {
@@ -66,5 +66,21 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                     templateUrl: getView('reset-password')
                 }
             }
-        });
+        })
+	.state('app.create_product',{
+		url: '/create-product',
+		views:{
+			'main@': {
+				templateUrl: getView('create-product')
+			}
+		}
+	})
+	.state('app.productos', {
+            url: '/productos',
+            views: {
+                'main@': {
+                    templateUrl: getView('productos')
+                }
+            }
+    });
 }
