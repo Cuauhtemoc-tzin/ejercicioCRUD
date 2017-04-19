@@ -27,7 +27,7 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
 				main: {}
 			}
 	     })
-		.state('app.landing', {
+	     .state('app.landing', {
             url: '/',
             views: {
                 'main@': {
@@ -67,20 +67,28 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-	.state('app.create_product',{
-		url: '/create-product',
-		views:{
-			'main@': {
-				templateUrl: getView('create-product')
-			}
-		}
-	})
-	.state('app.productos', {
+		.state('app.productos', {
             url: '/productos',
             views: {
                 'main@': {
                     templateUrl: getView('productos')
                 }
             }
-    });
+		})
+    	.state('app.agregar_producto', {
+			url: '/agregar-producto',
+            views: {
+                'main@': {
+                    templateUrl: getView('agregar-producto')
+                }
+            }
+    })
+    		.state('app.eliminar_producto', {
+            url: '/eliminar-producto',
+            views: {
+                'main@': {
+                    templateUrl: getView('eliminar-producto')
+                }
+            }
+		});
 }

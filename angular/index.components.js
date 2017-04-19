@@ -1,3 +1,4 @@
+import {EliminarProductoComponent} from './app/components/eliminar-producto/eliminar-producto.component';
 import {TodosProductosComponent} from './app/components/todos-productos/todos-productos.component';
 import {CrearFormularioProductoComponent} from './app/components/crear_formulario_producto/crear_formulario_producto.component';
 import {CreateProductFormComponent} from './app/components/create_product_form/create_product_form.component';
@@ -10,6 +11,7 @@ import {LoginFormComponent} from './app/components/login-form/login-form.compone
 import {RegisterFormComponent} from './app/components/register-form/register-form.component';
 
 angular.module('app.components')
+	.component('eliminarProducto', EliminarProductoComponent)
 	.component('todosProductos', TodosProductosComponent)
 	.component('crearFormularioProducto', CrearFormularioProductoComponent)
 	.component('createProductForm', CreateProductFormComponent)

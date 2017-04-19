@@ -11,7 +11,7 @@ class ProductosController extends Controller
     	public function store(Request $request)
 	{
 	 $this->validate($request, [
-	    'nombre' => 'required|string',
+	    'nombre' => 'required|string|min:10',
 	    'descripcion' => 'required|string',
 	 ]);
 		$producto = new Producto;
@@ -27,5 +27,17 @@ class ProductosController extends Controller
 	 $productos = Producto::get();
 	
 	 return response()->success(['productos' => $productos]);
+	  
 	}
+	
+	public function show($id){
+		$producto = Producto::find($id);
+		return response()->success(['producto'=> $producto]);
+}
+
+	public function delete($id){
+		$producto = Producto::find($id);
+		$producto->delete();
+	}
+	
 }

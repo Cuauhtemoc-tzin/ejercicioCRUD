@@ -19,10 +19,12 @@ Route::post('auth/register', 'Auth\AuthController@register');
 Route::post('auth/password/email', 'Auth\PasswordResetController@sendResetLinkEmail');
 Route::get('auth/password/verify', 'Auth\PasswordResetController@verify');
 Route::post('auth/password/reset', 'Auth\PasswordResetController@reset');
-Route::post('/products', 'ProductController@store');
-Route::resource('productos', 'ProductosController');
+//Route::post('/products', 'ProductController@store');
+//Route::resource('productos', 'ProductosController');
 Route::post('/addproducto', 'ProductosController@store');
 Route::get('/getProductos', 'ProductosController@get');
+Route::get('/producto/{id}', 'ProductosController@show');
+Route::get('/delproducto/{id}', 'ProductosController@delete');
 
 //protected API routes with JWT (must be logged in)
 Route::get('/user', function (Request $request) {

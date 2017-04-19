@@ -1,15 +1,22 @@
 <form ng-submit="vm.submit()">
-  
-    <md-input-container>
+  <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+		<md-input-container>
       <label>Nombre</label>
-      <input type="text" ng-model="vm.nombre" placeholder="Nombre" required>
+      <input type="text" ng-model="vm.nombre" placeholder="Nombre" required ng-minlength="10">
     </md-input-container>
   
     <md-input-container>
       <label>Descripción</label>
       <input type="text" ng-model="vm.descripcion" placeholder="Descripcion" required>
      </md-input-container>
+	</section>
+    
+	
+	<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+		<md-button type="submit" class="md-primary md-raised">Agregar</md-button>
+		<md-button  class="md-primary md-raised" ui-sref="app.productos">Cancelar</md-button>
+      
+	</section>
   
-    <md-button type="submit" class="md-primary md-raised">Agregar</md-button>
-  
+   
 </form>

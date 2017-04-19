@@ -1,9 +1,11 @@
 class CrearFormularioProductoController{
-    constructor(API, ToastService){
+    constructor(API, ToastService, $state, $location){
         'ngInject';
 
      this.API = API;
      this.ToastService = ToastService;
+     this.location= $location;
+     //this.$state= $state;
      
      this.nombre = '';
      this.descripcion = '';
@@ -25,6 +27,8 @@ class CrearFormularioProductoController{
 			this.ToastService.show('Producto agregado satisfactoriamente');
 			this.nombre="";
 			this.descripcion="";
+			this.location.path('/productos');
+			 //this.$state.go('app.productos');
 		});
 	}
 

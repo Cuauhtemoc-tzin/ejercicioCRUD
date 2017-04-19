@@ -1,19 +1,24 @@
 class TodosProductosController{
-    constructor(API, ToastService){
+    constructor(API, ToastService, $location, $rootScope){
         'ngInject';
-		
+		this.location=$location;
 		this.API = API;
 		this.ToastService = ToastService;
+		this.$rootScope = $rootScope;
     }
 
     $onInit(){
 		this.API.all('getProductos').get('').then((response) => {
 			this.productos = response.data.productos;
 		});
+		this.$rootScope.index = -1;
     }
     
-    eliminar(){
-		this.ToastService.show('En proceso');
+    eliminar(index){
+
+		//this.ToastService.show(index);
+		this.$rootScope.index = index;
+	    this.location.path('/eliminar-producto');
 	}
 		
 }
