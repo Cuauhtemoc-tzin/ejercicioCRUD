@@ -11,14 +11,21 @@ class TodosProductosController{
 		this.API.all('getProductos').get('').then((response) => {
 			this.productos = response.data.productos;
 		});
-		this.$rootScope.index = -1;
+		this.$rootScope.id = -1;
+		this.$rootScope.index  = 0;
     }
     
-    eliminar(index){
+    eliminar(id, index){
 
-		//this.ToastService.show(index);
+		this.$rootScope.id = id;
 		this.$rootScope.index = index;
 	    this.location.path('/eliminar-producto');
+	}
+	
+	editar(id, index){
+		this.$rootScope.id = id;
+		this.$rootScope.index = index;
+	    this.location.path('/editar-producto');
 	}
 		
 }

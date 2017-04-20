@@ -4,20 +4,28 @@ class EliminarProductoController{
         this.API = API;
         this.ToastService = ToastService
         this.location = $location;
-        this.$index = $rootScope.index;
+        this.$idToDel = $rootScope.id;
+        this.$index  = $rootScope.index;
 
         
     }
 
     $onInit(){		
-		this.API.all('producto/').get(this.$index).then((response) => {
+		this.API.all('producto/').get(this.$idToDel).then((response) => {
 			this.producto = response.data.producto;
 		});
 	}
-	eliminar($index)
+	
+	eliminar()
 	{
-		
-		
+		//this.$indexToDel = $indexToDel;
+		//this.ToastService.show(this.$indexToDel);
+		if(confirm('Seguro desea elimiar el producto?')){
+		this.API.all('delproducto/'+this.$idToDel).remove().then((response) => {
+		 	this.ToastService.show('Producto eliminado');
+		 	this.location.path('/productos');
+		});
+		}
 	}
 		
 		

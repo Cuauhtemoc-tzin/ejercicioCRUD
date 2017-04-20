@@ -35,9 +35,26 @@ class ProductosController extends Controller
 		return response()->success(['producto'=> $producto]);
 }
 
-	public function delete($id){
+	public function destroy($id){
+		$producto = Producto::destroy($id);
+		//$producto->delete();
+		//return response()->success(['producto' => $producto]);
+	}
+	
+	public function update(Request $request, $id)
+	{
+		$this->validate($request, [
+	    'nombre' => 'required|string|min:10',
+	    'descripcion' => 'required|string',
+		]);
+		//this.$idToEdit = $request->input('id');
 		$producto = Producto::find($id);
-		$producto->delete();
+		$producto -> nombre = $request->input('nombre');
+		$producto -> descripcion = $request->input('descripcion');
+		$producto -> save();
+
+		//return response()->success(compact('producto'));
+		
 	}
 	
 }

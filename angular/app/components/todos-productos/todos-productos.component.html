@@ -4,12 +4,12 @@
  
  <md-card-title>
 	 <md-card-title-text>
-		<span class="md-headline">{{producto.id}}{{" "}}{{producto.nombre}}</span>
+		<span class="md-headline">{{$index+1}}{{" "}}{{producto.nombre}}</span>
 		<span class="md-subhead">{{producto.descripcion}}</span>
 	 </md-card-title-text>
  </md-card-title>
  <md-card-action layout="row" layout-align="end center">
-	<md-button class="md-accent md-raised">Editar</md-button>
-	<md-button ng-click="vm.eliminar(producto.id)">Eliminar</md-button>
+	<md-button class="md-accent md-raised" ng-click="vm.editar(producto.id, ($index+1))">Editar</md-button>
+	<md-button class="md-accent md-raised" ng-click="vm.eliminar(producto.id, ($index+1))">Eliminar</md-button>
  </md-card-action>
 </md-card>

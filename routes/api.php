@@ -24,7 +24,8 @@ Route::post('auth/password/reset', 'Auth\PasswordResetController@reset');
 Route::post('/addproducto', 'ProductosController@store');
 Route::get('/getProductos', 'ProductosController@get');
 Route::get('/producto/{id}', 'ProductosController@show');
-Route::get('/delproducto/{id}', 'ProductosController@delete');
+Route::put('/editProducto/{id}', 'ProductosController@update');
+Route::delete('/delproducto/{id}', 'ProductosController@destroy');
 
 //protected API routes with JWT (must be logged in)
 Route::get('/user', function (Request $request) {

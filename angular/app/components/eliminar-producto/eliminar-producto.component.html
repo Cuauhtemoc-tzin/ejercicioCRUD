@@ -1,11 +1,27 @@
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
 
-<p>{{vm.producto}}</p>
-<p>{{vm.producto.id}}</p>
-<p>{{vm.producto.nombre}}</p>
-<p>{{vm.producto.descripcion}}</p>
+<table border="0" layout-align="center center" layout-wrap>
+ <tr>
+  <th>No.:</th>
+  <td>{{vm.$index}}</td>
+ </tr>
+ <tr>
+  <th>Nombre:</th>
+  <td>{{vm.producto.nombre}}</td>
+ </tr>
+ <tr>
+ <th>Descripción:</th>
+ <td>{{vm.producto.descripcion}}</td>
+ </tr>
+</table>
+</section>
 
-<md-button ng-click="vm.eliminar(producto.id)">Eliminar</md-button>
-<md-button ui-sref="app.productos"">Cancelar</md-button>
 
+
+
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+<md-button class="md-accent md-raised" ng-click="vm.eliminar()">Eliminar</md-button>
+<md-button class="md-accent md-raised" ui-sref="app.productos"">Cancelar</md-button>
+</section>
 
 

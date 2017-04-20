@@ -90,5 +90,13 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                     templateUrl: getView('eliminar-producto')
                 }
             }
+		})
+		.state('app.editar_producto', {
+            url: '/editar-producto',
+            views: {
+                'main@': {
+                    templateUrl: getView('editar-producto')
+                }
+            }
 		});
 }
